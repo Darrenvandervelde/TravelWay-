@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travel Your Way</title>
+<!-- Google Fonts for a modern look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  /* Reset some default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .logo {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #ff5a5f;
+  }
+
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  nav a {
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #f2f2f2;
+  }
+
+  .btn-primary {
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #e14f50;
+  }
+
+  /* Hero section */
+  .hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.4&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  /* Search form styles */
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .search-input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 200px;
+  }
+
+  .search-button {
+    padding: 12px 25px;
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .search-button:hover {
+    background-color: #e14f50;
+  }
+
+  /* Highlights section */
+  .highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 30px;
+    background-color: #f9f9f9;
+  }
+
+  .highlight {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .highlight svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    fill: #ff5a5f;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .testimonial p {
+    font-style: italic;
+  }
+
+  /* Footer styles */
+  footer {
+    background: #222;
+    color: #ccc;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons a svg {
+    width: 24px;
+    height: 24px;
+    fill: #ccc;
+    transition: fill 0.3s;
+  }
+
+  .social-icons a:hover svg {
+    fill: #ff5a5f;
+  }
+
+  /* Responsive styles */
+  @media(max-width: 768px){
+    .hero h1 {
+      font-size: 2em;
+    }
+    .search-form {
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+    }
+    footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">TravelWay</div>
+  <nav>
+    <a href="#">Explore</a>
+    <a href="#">Become a Host</a>
+    <a href="#">Help</a>
+    <a class="btn-primary" href="#">Sign Up</a>
+    <a href="#">Log In</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Travel Your Way</h1>
+    <p>Book unique homes and experiences around the world</p>
+    <!-- Search Form -->
+    <form class="search-form" id="searchForm" onsubmit="handleSearch(event)">
+      <input type="text" placeholder="Where to?" class="search-input" id="destination" required />
+      <input type="date" class="search-input" id="checkin" required />
+      <input type="date" class="search-input" id="checkout" required />
+      <input type="number" min="1" max="20" placeholder="Guests" class="search-input" id="guests" required />
+      <button class="search-button" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- Highlights Section -->
+<section class="highlights">
+  <div class="highlight">
+    <!-- Icon for Unique Stays -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+    </svg>
+    <h3>Unique Stays</h3>
+    <p>Experience one-of-a-kind accommodations around the globe.</p>
+  </div>
+  <div class="highlight">
+    <!-- Icon for Experiences -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>
+    <h3>Experiences</h3>
+    <p>Discover local activities and tours led by hosts.</p>
+  </div>
+  <div class="highlight">
+    <!-- Icon for Trusted Community -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>
+    <h3>Trusted Community</h3>
+    <p>Reviews, safety, and verified hosts ensure peace of mind.</p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonial">
+    <p>"TravelWay made my trip unforgettable. The hosts were amazing!"</p>
+    <strong>- Happy Traveler</strong>
+  </div>
+  <div class="testimonial">
+    <p>"Listing my place was easy and the platform is trustworthy."</p>
+    <strong>- Host John</strong>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Careers</a>
+    <a href="#">Press</a>
+    <a href="#">Help Center</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <div class="social-icons">
+    <a href="#"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.55-1.37 1.87-2.37-.82.49-1.75.85-2.73 1.05a4.48 4.48 0 0 0-7.65 4.09c-3.73-.18-7.04-1.97-9.26-4.69-.39.66-.61 1.43-.61 2.25 0 1.55.79 2.92 1.99 3.73-.73-.02-1.42-.22-2.02-.55v.06c0 2.16 1.53 3.96 3.56 4.37-.37.1-.76.15-1.16.15-.28 0-.56-.03-.83-.07.56 1.75 2.19 3.03 4.12 3.07-1.51 1.18-3.42 1.89-5.5 1.89-.36 0-.71-.02-1.07-.06 1.96 1.26 4.3 2 6.81 2 8.18 0 15.92-6.78 15.92-15.94 0-.24-.01-.49-.02-.73.11-.08.23-.17.34-.25z"/></svg></a>
+    <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.2c-2.76 0-4.99 2.23-4.99 4.99 0 2.76 2.23 4.99 4.99 4.99s4.99-2.23 4.99-4.99c0-2.76-2.23-4.99-4.99-4.99zm0 8.99c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></a>
+  </div>
+</footer>
+
+<!-- JavaScript for Search Button -->
+<script>
+  function handleSearch(event) {
+    event.preventDefault();
+    const destination = document.getElementById('destination').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+
+    alert(`Searching for stays in ${destination} from ${checkin} to ${checkout} for ${guests} guests.`);
+    // You can replace this alert with actual search logic or redirect
+  }
+</script>
+</body>
+</html>
