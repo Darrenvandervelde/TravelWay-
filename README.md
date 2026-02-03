@@ -49,6 +49,7 @@ TravelWay/
 │
 ├── index.html
 ├── Screenshot.png
+├── LICENSE 
 └── README.md
 ```
 
