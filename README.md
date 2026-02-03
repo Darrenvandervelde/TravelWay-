@@ -47,14 +47,9 @@ This project is ideal for a travel blog, tourism portfolio, or as a foundation f
 ```
 TravelWay/
 │
-├── index.html          # Main landing page
-├── css/
-│   └── style.css       # Main stylesheet
-├── js/
-│   └── script.js       # JavaScript interactions
-├── images/             # Images and assets
-├── Screenshot.png      # Preview image
-└── README.md           # Project documentation
+├── index.html
+├── Screenshot.png
+└── README.md
 ```
 
 ---
