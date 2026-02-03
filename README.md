@@ -8,7 +8,7 @@ Any unauthorized copying, distribution, modification, or use of this project, in
 
 ![TravelWay Demo](Screenshot.png)
 
-Please click here to [view live demo](https://travelway.vercel.app)
+Please click here to [view live demo](https://travel-way-red.vercel.app/)
 
 ---
 
